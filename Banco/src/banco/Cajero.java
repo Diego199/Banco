@@ -153,7 +153,7 @@ public class Cajero extends JFrame {
                         Fondos = 0.0;
 			resultado = Fondos + new Double(pantalla.getText());
                     }
-                        pantalla.setText("" + resultado);
+                        pantalla.setText("Balance: " + resultado);
                         operacion = "";
 	}
         private void Sacar() {
@@ -161,7 +161,7 @@ public class Cajero extends JFrame {
                         Fondos = 0.0;
 			resultado = Fondos - new Double(pantalla.getText());
                     }
-                    pantalla.setText("" + resultado);
+                    pantalla.setText("Balance: " + resultado);
 		operacion = "";
 	}
          private void Salir() {
