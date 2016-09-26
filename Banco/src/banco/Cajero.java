@@ -46,7 +46,6 @@ public class Cajero extends JFrame {
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setResizable(false);
 
-		// Vamos a dibujar sobre el panel
 		JPanel panel = (JPanel) this.getContentPane();
 		panel.setLayout(new BorderLayout());
 
@@ -84,13 +83,6 @@ public class Cajero extends JFrame {
 		validate();
 	}
 
-	/**
-	 * Crea un boton del teclado numérico y enlaza sus eventos con el listener
-	 * correspondiente
-	 * 
-	 * @param digito
-	 *            boton a crear
-	 */
 	private void nuevoBotonNumerico(String digito) {
 		JButton btn = new JButton();
 		btn.setText(digito);
@@ -106,11 +98,6 @@ public class Cajero extends JFrame {
 		panelNumeros.add(btn);
 	}
 
-	/**
-	 * Crea un botón de operacion y lo enlaza con sus eventos.
-	 * 
-	 * @param operacion
-	 */
 	private void nuevoBotonOperacion(String operacion) {
 		JButton btn = new JButton(operacion);
 		btn.setForeground(Color.RED);
@@ -127,12 +114,6 @@ public class Cajero extends JFrame {
 		panelOperaciones.add(btn);
 	}
 
-	/**
-	 * Gestiona las pulsaciones de teclas numéricas
-	 * 
-	 * @param digito
-	 *            tecla pulsada
-	 */
 	private void numeroPulsado(String digito) {
 		if (pantalla.getText().equals("0") || nuevaOperacion) {
 			pantalla.setText(digito);
@@ -142,11 +123,7 @@ public class Cajero extends JFrame {
 		nuevaOperacion = false;
 	}
 
-	/**
-	 * Gestiona el gestiona las pulsaciones de teclas de operación
-	 * 
-	 * @param tecla
-	 */
+	
 	private void operacionPulsado(String tecla) {
 		if (tecla.equals("Nueva Cuenta")) {
 			User();
@@ -165,9 +142,7 @@ public class Cajero extends JFrame {
 		nuevaOperacion = true;
 	}
 
-	/**
-	 * Calcula el resultado y lo muestra por pantalla
-	 */
+	
 	private void User() {
             if (operacion.equals("Nueva Cuenta")) {
             
