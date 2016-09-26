@@ -152,7 +152,7 @@ public class Cajero extends JFrame {
                     if (operacion.equals("Abonar")) {
                         Fondos = 0.0;
 			resultado = Fondos + new Double(pantalla.getText());
-                    }
+                    } 
                         pantalla.setText("Balance: " + resultado);
                         operacion = "";
 	}
