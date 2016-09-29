@@ -126,7 +126,7 @@ public class Cajero extends JFrame {
 	
 	private void operacionPulsado(String tecla) {
 		if (tecla.equals("Nueva Cuenta")) {
-			zUser();
+			User();
 		} else if (tecla.equals("Abonar")) {
                     Meter();
 			pantalla.setText("Abonado");
