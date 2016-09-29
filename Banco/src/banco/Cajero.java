@@ -5,6 +5,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.PopupMenu;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -35,7 +36,7 @@ public class Cajero extends JFrame {
 
 	String operacion;
 
-	JPanel panelNumeros, panelOperaciones;
+	JPanel panelNumeros, panelOperaciones , panelUser;
 
 	boolean nuevaOperacion = true;
 
@@ -57,6 +58,14 @@ public class Cajero extends JFrame {
 		pantalla.setBackground(Color.WHITE);
 		panel.add("North", pantalla);
 
+                User = new JTextField("0", 20);
+		User.setBorder(new EmptyBorder(4, 4, 4, 4));
+		User.setFont(new Font("Arial", Font.BOLD, 25));
+		User.setHorizontalAlignment(JTextField.RIGHT);
+		User.setEditable(false);
+		User.setBackground(Color.WHITE);
+		panel.add("North", User);
+                
 		panelNumeros = new JPanel();
 		panelNumeros.setLayout(new GridLayout(4, 3));
 		panelNumeros.setBorder(new EmptyBorder(4, 4, 4, 4));
@@ -144,30 +153,33 @@ public class Cajero extends JFrame {
 
 	
 	private void User() {
-            if (operacion.equals("Nueva Cuenta")) {
+            panelUser = new JPanel();
+		panelUser.setLayout(new GridLayout(6, 1));
+		panelUser.setBorder(new EmptyBorder(4, 4, 4, 4));
+                    
+                   User.setVisible(true);
+                   Password.setVisible(true);
             
-            }
+                   
+            
 	}
         private void Meter() {
-                    if (operacion.equals("Abonar")) {
+                    
                         Fondos = 0.0;
 			resultado = Fondos + new Double(pantalla.getText());
-                    } 
+                    
                         pantalla.setText("Balance: " + resultado);
                         operacion = "";
 	}
         private void Sacar() {
-                    if (operacion.equals("Retirar")) {
                         Fondos = 0.0;
 			resultado = Fondos - new Double(pantalla.getText());
-                    }
+                    
                     pantalla.setText("Balance: " + resultado);
 		operacion = "";
 	}
          private void Salir() {
-             if (operacion.equals("Salir")) {
-                 
-             }
+            
              }
              
 	}
